@@ -1,0 +1,179 @@
+{
+    "items": [
+        {
+            "isblank": false,
+            "type": "Crafting",
+            "pattern": [
+                "#"
+            ],
+            "key": [
+                {
+                    "key": 35,
+                    "item": {
+                        "item_name": "",
+                        "item_tag": "Log"
+                    }
+                }
+            ],
+            "result": {
+                "item": {
+                    "instanceID": 15204
+                },
+                "item_info": "Wood Plank",
+                "count": 4
+            }
+        },
+        {
+            "isblank": false,
+            "type": "Crafting",
+            "pattern": [
+                "#",
+                "#"
+            ],
+            "key": [
+                {
+                    "key": 35,
+                    "item": {
+                        "item_name": "",
+                        "item_tag": "Planks"
+                    }
+                }
+            ],
+            "result": {
+                "item": {
+                    "instanceID": 24874
+                },
+                "item_info": "Stick",
+                "count": 2
+            }
+        },
+        {
+            "isblank": false,
+            "type": "Crafting",
+            "pattern": [
+                "$$$",
+                "#",
+                "#"
+            ],
+            "key": [
+                {
+                    "key": 36,
+                    "item": {
+                        "item_name": "Iron",
+                        "item_tag": ""
+                    }
+                },
+                {
+                    "key": 35,
+                    "item": {
+                        "item_name": "Stick",
+                        "item_tag": ""
+                    }
+                }
+            ],
+            "result": {
+                "item": {
+                    "instanceID": 37760
+                },
+                "item_info": "Iron Pickaxe",
+                "count": 1
+            }
+        },
+        {
+            "isblank": false,
+            "type": "Crafting",
+            "pattern": [
+                "%%%",
+                "#",
+                "#"
+            ],
+            "key": [
+                {
+                    "key": 37,
+                    "item": {
+                        "item_name": "Stone",
+                        "item_tag": ""
+                    }
+                },
+                {
+                    "key": 35,
+                    "item": {
+                        "item_name": "Stick",
+                        "item_tag": ""
+                    }
+                }
+            ],
+            "result": {
+                "item": {
+                    "instanceID": 37784
+                },
+                "item_info": "Stone Pickaxe",
+                "count": 1
+            }
+        },
+        {
+            "isblank": true,
+            "type": "Crafting",
+            "pattern": [
+                "  %",
+                " %#",
+                "% #"
+            ],
+            "key": [
+                {
+                    "key": 37,
+                    "item": {
+                        "item_name": "Stick",
+                        "item_tag": ""
+                    }
+                },
+                {
+                    "key": 35,
+                    "item": {
+                        "item_name": "String",
+                        "item_tag": ""
+                    }
+                }
+            ],
+            "result": {
+                "item": {
+                    "instanceID": 37734
+                },
+                "item_info": "Fishing Rod",
+                "count": 1
+            }
+        },
+        {
+            "isblank": true,
+            "type": "Crafting",
+            "pattern": [
+                "   ",
+                " % ",
+                "  #"
+            ],
+            "key": [
+                {
+                    "key": 37,
+                    "item": {
+                        "item_name": "Fishing Rod",
+                        "item_tag": ""
+                    }
+                },
+                {
+                    "key": 35,
+                    "item": {
+                        "item_name": "Carrot",
+                        "item_tag": ""
+                    }
+                }
+            ],
+            "result": {
+                "item": {
+                    "instanceID": 37710
+                },
+                "item_info": "Carrot Stick",
+                "count": 1
+            }
+        }
+    ]
+}
