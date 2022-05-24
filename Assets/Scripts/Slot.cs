@@ -74,7 +74,8 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
         {
             if (this.item != null) // 만약 해당 슬롯에 아이템이 있었다면
             {
-                if (this.item == DragSlot.Instance.draging_item && this != DragSlot.Instance.drag_Slot) // 같은 아이템이라면
+                if (this.item == DragSlot.Instance.draging_item && this != DragSlot.Instance.drag_Slot &&
+                    this.item.item_type != Item_Type.Not_Overlap_Item) // 같은 아이템이라면
                 {
                     this.Item_CountAdd(DragSlot.Instance.item_Count);
                     DragSlot.Instance.drag_Slot?.Slot_Clear();

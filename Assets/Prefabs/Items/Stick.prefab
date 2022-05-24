@@ -90,3 +90,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_name: Stick
   item_tag: 
+  item_type: 1

@@ -17,7 +17,7 @@
             ],
             "result": {
                 "item": {
-                    "instanceID": 15204
+                    "instanceID": 15538
                 },
                 "item_info": "Wood Plank",
                 "count": 4
@@ -41,7 +41,7 @@
             ],
             "result": {
                 "item": {
-                    "instanceID": 24874
+                    "instanceID": 15540
                 },
                 "item_info": "Stick",
                 "count": 2
@@ -73,7 +73,7 @@
             ],
             "result": {
                 "item": {
-                    "instanceID": 37760
+                    "instanceID": 15542
                 },
                 "item_info": "Iron Pickaxe",
                 "count": 1
@@ -105,7 +105,7 @@
             ],
             "result": {
                 "item": {
-                    "instanceID": 37784
+                    "instanceID": 15552
                 },
                 "item_info": "Stone Pickaxe",
                 "count": 1
@@ -137,7 +137,7 @@
             ],
             "result": {
                 "item": {
-                    "instanceID": 37734
+                    "instanceID": 15548
                 },
                 "item_info": "Fishing Rod",
                 "count": 1
@@ -169,7 +169,7 @@
             ],
             "result": {
                 "item": {
-                    "instanceID": 37710
+                    "instanceID": 15546
                 },
                 "item_info": "Carrot Stick",
                 "count": 1

@@ -90,3 +90,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_name: Stone Pickaxe
   item_tag: 
+  item_type: 2
