@@ -574,6 +574,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d771e9b8c7f3214b8b98089513e9260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &234938559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 234938560}
+  - component: {fileID: 234938562}
+  - component: {fileID: 234938561}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &234938560
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234938559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_Children: []
+  m_Father: {fileID: 469763235}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 150, y: -300}
+  m_SizeDelta: {x: 350, y: 400}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &234938561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234938559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 50
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Ctrl \uB204\uB978\uCC44\uB85C \uB4DC\uB798\uADF8 \uC564 \uB4DC\uB86D\uC2DC
+    2\uBD84\uD560\uB429\uB2C8\uB2E4."
+--- !u!222 &234938562
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 234938559}
+  m_CullTransparentMesh: 1
 --- !u!1001 &242510211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -920,7 +1000,7 @@ RectTransform:
   m_GameObject: {fileID: 310513985}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children:
   - {fileID: 1216760478}
   - {fileID: 964027965}
@@ -1505,6 +1585,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 310513986}
+  - {fileID: 234938560}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4875,6 +4956,63 @@ MonoBehaviour:
     result:
       item: {fileID: 469374316225094744, guid: e444d5e5a5dccf54da75f3c8fcd2d9a9, type: 3}
       item_info: Iron Pickaxe
+      count: 1
+  - isblank: 0
+    type: Crafting
+    pattern:
+    - '%%%'
+    - '#'
+    - '#'
+    key:
+    - key: 37
+      item:
+        item_name: Stone
+        item_tag: 
+    - key: 35
+      item:
+        item_name: Stick
+        item_tag: 
+    result:
+      item: {fileID: 6124911699272348249, guid: cd35f51ca0f6d3846b4716d8fe27fa8a, type: 3}
+      item_info: Stone Pickaxe
+      count: 1
+  - isblank: 1
+    type: Crafting
+    pattern:
+    - '  %'
+    - ' %#'
+    - '% #'
+    key:
+    - key: 37
+      item:
+        item_name: Stick
+        item_tag: 
+    - key: 35
+      item:
+        item_name: String
+        item_tag: 
+    result:
+      item: {fileID: 1357065205709308721, guid: fdab5fee8717fc1409f2a01719f88c60, type: 3}
+      item_info: Fishing Rod
+      count: 1
+  - isblank: 1
+    type: Crafting
+    pattern:
+    - '   '
+    - ' % '
+    - '  #'
+    key:
+    - key: 37
+      item:
+        item_name: Fishing Rod
+        item_tag: 
+    - key: 35
+      item:
+        item_name: Carrot
+        item_tag: 
+    result:
+      item: {fileID: 4647005241853550273, guid: 1ec37e8a37c9a5c4ba3e196791299e93, type: 3}
+      item_info: Carrot Stick
       count: 1
 --- !u!1 &2051019437
 GameObject:

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// 결과 슬롯
 public class ResultSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler, IEndDragHandler
 {
     [Header("ResultSlot Info")]
@@ -35,9 +36,9 @@ public class ResultSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropH
 
     public void OnBeginDrag(PointerEventData eventData) // 드래그 시작시
     {
-        if (item != null) // 해당 슬롯이 스킬이 있었다면 
+        if (item != null) // 해당 슬롯이 아이템이 있었다면 
         {
-            // 드래그하는 스킬을 설정
+            // 드래그하는 아이템을 설정
             DragSlot.Instance.drag_result_Slot = this;
             DragSlot.Instance.Drag_Image_Set(item, image, item_Count);
             DragSlot.Instance.transform.position = eventData.position;
@@ -46,12 +47,12 @@ public class ResultSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropH
 
     public void OnDrag(PointerEventData eventData) // 드래그 중일때 
     {
-        DragSlot.Instance.transform.position = eventData.position; // 드래그하는 스킬의 좌표를 마우스 좌표로 넣어줌.
+        DragSlot.Instance.transform.position = eventData.position; // 드래그하는 아이템의 좌표를 마우스 좌표로 넣어줌.
     }
 
     public void OnDrop(PointerEventData eventData) // 이 슬롯에 Drop 이 일어났을때 
     {
-        if (DragSlot.Instance.draging_item != null) // 드래그 중인 스킬이 있었다면
+        if (DragSlot.Instance.draging_item != null) // 드래그 중인 아이템이 있었다면
         {
            
         }
@@ -59,7 +60,7 @@ public class ResultSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropH
 
     public void OnEndDrag(PointerEventData eventData) // 드래그가 끝날 시 
     {
-        DragSlot.Instance.Drag_Image_End(); // 드래그 하던 스킬에게 드래그가 끝났다는 함수를 호출함. 
+        DragSlot.Instance.Drag_Image_End(); // 드래그 하던 슬롯에게 드래그가 끝났다는 함수를 호출함. 
     }
 
     public void Slot_Clear() // 해당 슬롯을 비워주는 함수.
@@ -73,7 +74,6 @@ public class ResultSlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropH
         countText.color = new Color(50, 50, 50, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
         

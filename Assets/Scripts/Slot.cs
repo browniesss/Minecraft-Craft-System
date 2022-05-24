@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// 슬롯 스크립트
 public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler, IEndDragHandler
 {
     [Header("Slot Item Info")]
@@ -54,9 +55,9 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
 
     public void OnBeginDrag(PointerEventData eventData) // 드래그 시작시
     {
-        if (item != null) // 해당 슬롯이 스킬이 있었다면 
+        if (item != null) // 해당 슬롯이 아이템이 있었다면 
         {
-            // 드래그하는 스킬을 설정
+            // 드래그하는 아이템을 설정
             DragSlot.Instance.drag_Slot = this;
             DragSlot.Instance.Drag_Image_Set(item, image, item_Count);
             DragSlot.Instance.transform.position = eventData.position;
@@ -65,7 +66,7 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
 
     public void OnDrag(PointerEventData eventData) // 드래그 중일때 
     {
-        DragSlot.Instance.transform.position = eventData.position; // 드래그하는 스킬의 좌표를 마우스 좌표로 넣어줌.
+        DragSlot.Instance.transform.position = eventData.position; // 드래그하는 아이템의 좌표를 마우스 좌표로 넣어줌.
     }
 
     public void OnDrop(PointerEventData eventData) // 이 슬롯에 Drop 이 일어났을때 
@@ -75,14 +76,17 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
             if (this.item != null) // 만약 해당 슬롯에 아이템이 있었다면
             {
                 if (this.item == DragSlot.Instance.draging_item && this != DragSlot.Instance.drag_Slot &&
-                    this.item.item_type != Item_Type.Not_Overlap_Item) // 같은 아이템이라면
+                    this.item.item_type != Item_Type.Not_Overlap_Item) // 같은 아이템이고 드래그 중인 슬롯이 아니였고
+                    // 겹칠 수 있는 아이템이라면
                 {
-                    this.Item_CountAdd(DragSlot.Instance.item_Count);
+                    this.Item_CountAdd(DragSlot.Instance.item_Count); // 아이템을 겹쳐줌.
                     DragSlot.Instance.drag_Slot?.Slot_Clear();
                     DragSlot.Instance.drag_result_Slot?.Slot_Clear();
                 }
-                else
+                else // 그게 아니라면
                 {
+                    // 슬롯 체인지
+
                     Item temp_item = this.item;
                     int temp_Count = this.item_Count;
 
@@ -92,15 +96,17 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
             }
             else // 해당 슬롯에 아이템이 없었다면
             {
-                if (!GameManager.Instance.toggle_Ctrl || DragSlot.Instance.drag_Slot == null)
+                if (!GameManager.Instance.toggle_Ctrl || DragSlot.Instance.drag_Slot == null) // 컨트롤 키가 눌려있지 않았거나
+                    // 드래그 중인 슬롯이 없었다면
                 {
+                    // 아이템 추가
                     AddItem(DragSlot.Instance.draging_item, DragSlot.Instance.item_Count);
                     DragSlot.Instance.drag_Slot?.Slot_Clear();
                     DragSlot.Instance.drag_result_Slot?.Slot_Clear();
                 }
-                else
+                else // 컨트롤 키가 눌려있었다면 
                 {
-                    if (DragSlot.Instance.item_Count >= 2)
+                    if (DragSlot.Instance.item_Count >= 2) // 아이템 분할
                     {
                         AddItem(DragSlot.Instance.draging_item, DragSlot.Instance.item_Count / 2);
                         DragSlot.Instance.drag_Slot.Item_CountMinus(DragSlot.Instance.item_Count / 2);
@@ -109,13 +115,14 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
                 }
             }
 
-            if (CraftPlace.Instance.craft_Slot.Contains(this))
+            if (CraftPlace.Instance.craft_Slot.Contains(this)) // 만약 조합대 슬롯에 올렸다면 
             {
-                CraftPlace.Instance.Craft_Check(this.item);
+                CraftPlace.Instance.Craft_Check(this.item); // 레시피 검사 조합 함수 호출
             }
 
             if (!CraftPlace.Instance.craft_Slot.Contains(this) &&
-                CraftPlace.Instance.craft_Slot.Contains(DragSlot.Instance.drag_Slot))
+                CraftPlace.Instance.craft_Slot.Contains(DragSlot.Instance.drag_Slot)) // 조합대에서 아이템을 내렸을경우
+                // 남은 조합대의 아이템이 있는지 검사 후 다시 레시피 검사 실행
             {
                 Item temp_ite = null;
                 foreach (var item in CraftPlace.Instance.craft_Slot)
@@ -130,7 +137,8 @@ public class Slot : MonoBehaviour, IBeginDragHandler, IDragHandler, IDropHandler
             }
 
             if (DragSlot.Instance.drag_result_Slot != null &&
-                !CraftPlace.Instance.craft_Slot.Contains(this))
+                !CraftPlace.Instance.craft_Slot.Contains(this)) // 결과 슬롯에서 아이템 드래그해서 옮길 시 
+                // 조합대의 아이템들 개수 감소
             {
                 foreach (var slot in CraftPlace.Instance.craft_Slot)
                 {
